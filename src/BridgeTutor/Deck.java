@@ -45,13 +45,15 @@ public class Deck {
             }
         }
         
-        for (int j = 0; j < 52; j++) {
-            System.out.println(cards[j]);
-        }
+       
     }   
         
-    public Cards[] shuffle() {
-        // make random order of cards to shuffle
-    return cards;
+    public Cards[] shuffle(int start) {
+        Cards[] hand = new Cards[13];// make random order of cards to shuffle
+        for (int i = 0; i < 13; i++) {
+            hand[i] = cards[start + i];
+            
+        }
+    return hand;
     }
 }

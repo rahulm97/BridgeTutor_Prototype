@@ -11,6 +11,6 @@ package BridgeTutor;
  */
 public class test {
     public static void main(String[] args) {
-        Deck deck = new Deck();
+        CardHand hands = new CardHand();
     }
 }
