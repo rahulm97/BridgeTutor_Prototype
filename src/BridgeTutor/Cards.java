@@ -19,6 +19,9 @@ public class Cards {
         HEARTS,
         DIAMONDS,
         CLUBS;
+        public String toString(){
+        return name().substring(0, 1);
+    }
     }
     
     public enum CardValue {
@@ -46,14 +49,21 @@ public class Cards {
         public int getValue() {
             return cardValue;
         }
-        
+        public String toString(){
+            if (cardValue < 10){
+                return String.valueOf(cardValue);
+            }
+            else{
+        return name().substring(0, 1);
+            }
+    }
         }
     
     public Cards(){
 
     }
     
-    public Cards(CardValue cardValue, Suit suit) {
+    public Cards(Suit suit, CardValue cardValue) {
         this.cardValue = cardValue;
         this.suit = suit;
     }
@@ -64,5 +74,9 @@ public class Cards {
     
     public CardValue getValue(){
         return cardValue;
+    }
+    
+    public String toString() {
+        return suit + "" + cardValue;
     }
 }

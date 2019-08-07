@@ -15,7 +15,7 @@ public class Deck {
     private Cards.CardValue[] values = new Cards.CardValue[13];
     private Cards.Suit[] suits = new Cards.Suit[4];
     public Deck(){
-         
+         populate();
     }
     public void populate() {
         values[0] = Cards.CardValue.TWO; //= [Cards.CardValue.TWO, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE,Cards.CardValue.THREE];
@@ -36,6 +36,18 @@ public class Deck {
         suits[1] = Cards.Suit.HEARTS;
         suits[2] = Cards.Suit.DIAMONDS;
         suits[3] = Cards.Suit.CLUBS;
+        int i = 0;
+        for (Cards.Suit x: suits) {
+            for(Cards.CardValue y : values){
+                pop = new Cards(x, y);
+                cards[i] = pop;
+                i++;
+            }
+        }
+        
+        for (int j = 0; j < 52; j++) {
+            System.out.println(cards[j]);
+        }
     }   
         
     public Cards[] shuffle() {
