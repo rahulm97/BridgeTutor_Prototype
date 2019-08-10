@@ -37,4 +37,17 @@ public class CardHand {
         }
     }
     
+    public Cards[] getHand1(){
+        return hand1;
+    }
+    public Cards[] getHand2(){
+        return hand2;
+    }
+    public Cards[] getHand3(){
+        return hand3;
+    }
+    public Cards[] getHand4(){
+        return hand4;
+    }
+    
 }

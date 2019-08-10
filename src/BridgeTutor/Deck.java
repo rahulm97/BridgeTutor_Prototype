@@ -17,6 +17,9 @@ public class Deck {
     public Deck(){
          populate();
     }
+    public Deck(String textFile){
+        
+    }
     public void populate() {
         values[0] = Cards.CardValue.TWO; //= [Cards.CardValue.TWO, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE,Cards.CardValue.THREE];
         values[1] = Cards.CardValue.THREE;
