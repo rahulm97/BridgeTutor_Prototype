@@ -23,7 +23,7 @@ public class Player {
         this.hand = hand;
     }
     
-    public void play(Cards card){
+    public void play(Cards card){ //use buttons for input of cards, if clicked hide...
         for (int i = 0; i < 13; i++) {
             if (hand[i] == card) {
                 hand[i] = null;

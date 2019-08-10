@@ -10,7 +10,7 @@ package BridgeTutor;
  * @author GAM
  */
 public class Rules {
-    private boolean allowed;
+
     
     public Rules(){
         
