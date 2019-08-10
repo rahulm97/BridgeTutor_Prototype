@@ -34,8 +34,8 @@ public class Board {
     public void nextTurn(){
         if (turnCount > 3) { // if all players have played reset the counter and check the winner to score the trick, and reset the board
             turnCount = 0;
-            //checkWinner()
-            //incrementScore
+            checkWinner();
+            
             
             reset();
         }

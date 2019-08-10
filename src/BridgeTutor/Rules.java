@@ -23,4 +23,22 @@ public class Rules {
     public boolean checkConditions(CardHand hand){
         return true;
     }
+    
+    public boolean[] checkHand(Cards[] playerHand, Cards suit){ // makes an array with position of each card that can be played
+        int allowed = 0;
+        boolean[] cardsAllowed = new boolean[13];
+        for (int i = 0; i < playerHand.length; i++) {
+            if (playerHand[i].getSuit() == suit.getSuit()) {
+                cardsAllowed[i] = true;
+                allowed++;
+            }
+        }
+        if (allowed == 0) { // if no cards of the same suit player can play any card
+            for (int i = 0; i < cardsAllowed.length; i++) {
+                cardsAllowed[i] = true;
+            }
+        }
+        return cardsAllowed;
+    }
 }
+

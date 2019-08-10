@@ -31,4 +31,8 @@ public class Player {
         } // maybe return card played and give parameter as a user input
         
     }
+    
+    public Cards[] getHand(){
+        return hand;
+    }
 }
