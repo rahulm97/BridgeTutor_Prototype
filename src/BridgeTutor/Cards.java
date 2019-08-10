@@ -63,9 +63,6 @@ public class Cards {
 
     }
     
-    
-    
-    
     public Cards(Suit suit, CardValue cardValue) {
         this.cardValue = cardValue;
         this.suit = suit;
