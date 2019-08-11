@@ -56,42 +56,317 @@ public class Deck {
     public Cards[] shuffle(int start) {
         String[] west, south, east, north;
         Cards[] hand = new Cards[13];// make random order of cards to shuffle
-        for (int i = 0; i < 13; i++) {
-            hand[i] = cards[start + i];
-            
-            //code to use lessons input
-            
-            int val = 0;
-            west = input.getWest();
-            for(String x: west){
-                switch(x.substring(0, 1)) {
-                    case "S":
-                        for (int j = 1; j < x.length()-1; j++) {
-                            String firstLetter = x.substring(j,j+1);
-                            
-                            for (int k = 0; k < values.length; k++) {
-                                if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
-                                    
-                                }
-                            }
-                            
-                        }
-                    case "H":
-                        
-                    case "D":
-                        
-                    case "C":
-                        
-                }
-                    
-                }
-            }
+
             south =input.getSouth();
             east =input.getEast();
             north = input.getNorth();
             
             return hand;
         }
+    
+    public Cards[] getWestHand(){
+        Cards[] hand = new Cards[13];
+         String [] west = input.getWest();
+            int count = 0;
+            int position = 0;
+            for(String x: west){
+                
+                //lenggth of array + 1
+                switch(x.substring(0, 1)) {
+                    case "S":
+                        for (int j = 1; j < x.length(); j++) {
+                            System.out.println("S " + x);
+                            String firstLetter = x.substring(j,j+1);
+                            
+                            for (int k = 0; k < values.length; k++) {
+                                if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
+                                    Cards temp = new Cards(suits[0], values[k]);
+                                    hand[position] = temp;
+                                    position++;
+                                    System.out.println("Sposition: " + position);
+                                }
+                            }
+                            
+                        }
+                        break;
+                    case "H":
+                        for (int j = 1; j < x.length(); j++) {
+                            System.out.println("H " + x);
+                            String firstLetter = x.substring(j,j+1);
+                            //position = x.indexOf("H")-1;
+                            for (int k = 0; k < values.length; k++) {
+                                if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
+                                    Cards temp = new Cards(suits[1], values[k]);
+                                    hand[position] = temp;
+                                    position++;
+                                    System.out.println("Hposition: " + position);
+                                }
+                            }
+                            
+                        }
+                        break;
+                    case "D":
+                        for (int j = 1; j < x.length(); j++) {
+                            System.out.println("D: " + x);
+                            String firstLetter = x.substring(j,j+1);
+                            //int position = x.indexOf("D")-1;
+                            for (int k = 0; k < values.length; k++) {
+                                if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
+                                    Cards temp = new Cards(suits[2], values[k]);
+                                    hand[position] = temp;
+                                    position++;
+                                    System.out.println("Dposition: " + position);
+                                }
+                            }
+                            
+                        }
+                        break;
+                    case "C":
+                        for (int j = 1; j < x.length(); j++) {
+                            System.out.println("C: " + x);
+                            String firstLetter = x.substring(j,j+1);
+                            //int position = x.indexOf("H")-1;
+                            for (int k = 0; k < values.length; k++) {
+                                if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
+                                    Cards temp = new Cards(suits[3], values[k]);
+                                    hand[position] = temp;
+                                    position++;
+                                    System.out.println("Cposition: " + position);
+                                }
+                            }
+                            
+                        }
+                        break;
+                }
+                   
+                }
+            return hand;
+    }
+    public Cards[] getNorthHand(){
+        Cards[] hand = new Cards[13];
+         String [] north = input.getNorth();
+            int position = 0;
+            for(String x: north){
+                
+                switch(x.substring(0, 1)) {
+                    case "S":
+                        for (int j = 1; j < x.length(); j++) {
+                            System.out.println("S " + x);
+                            String firstLetter = x.substring(j,j+1);
+                            
+                            for (int k = 0; k < values.length; k++) {
+                                if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
+                                    Cards temp = new Cards(suits[0], values[k]);
+                                    hand[position] = temp;
+                                    position++;
+                                    System.out.println("Sposition: " + position);
+                                }
+                            }
+                            
+                        }
+                        break;
+                    case "H":
+                        for (int j = 1; j < x.length(); j++) {
+                            System.out.println("H " + x);
+                            String firstLetter = x.substring(j,j+1);
+                            //position = x.indexOf("H")-1;
+                            for (int k = 0; k < values.length; k++) {
+                                if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
+                                    Cards temp = new Cards(suits[1], values[k]);
+                                    hand[position] = temp;
+                                    position++;
+                                    System.out.println("Hposition: " + position);
+                                }
+                            }
+                            
+                        }
+                        break;
+                    case "D":
+                        for (int j = 1; j < x.length(); j++) {
+                            System.out.println("D: " + x);
+                            String firstLetter = x.substring(j,j+1);
+                            //int position = x.indexOf("D")-1;
+                            for (int k = 0; k < values.length; k++) {
+                                if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
+                                    Cards temp = new Cards(suits[2], values[k]);
+                                    hand[position] = temp;
+                                    position++;
+                                    System.out.println("Dposition: " + position);
+                                }
+                            }
+                            
+                        }
+                        break;
+                    case "C":
+                        for (int j = 1; j < x.length(); j++) {
+                            System.out.println("C: " + x);
+                            String firstLetter = x.substring(j,j+1);
+                            //int position = x.indexOf("H")-1;
+                            for (int k = 0; k < values.length; k++) {
+                                if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
+                                    Cards temp = new Cards(suits[3], values[k]);
+                                    hand[position] = temp;
+                                    position++;
+                                    System.out.println("Cposition: " + position);
+                                }
+                            }
+                            
+                        }
+                        break;
+                }
+                }
+            return hand;
+    }
+    public Cards[] getEastHand(){
+        Cards[] hand = new Cards[13];
+         String [] east = input.getEast();
+            int position = 0;
+            for(String x: east){
+                
+                switch(x.substring(0, 1)) {
+                    case "S":
+                        for (int j = 1; j < x.length(); j++) {
+                            System.out.println("S " + x);
+                            String firstLetter = x.substring(j,j+1);
+                            
+                            for (int k = 0; k < values.length; k++) {
+                                if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
+                                    Cards temp = new Cards(suits[0], values[k]);
+                                    hand[position] = temp;
+                                    position++;
+                                    System.out.println("Sposition: " + position);
+                                }
+                            }
+                            
+                        }
+                        break;
+                    case "H":
+                        for (int j = 1; j < x.length(); j++) {
+                            System.out.println("H " + x);
+                            String firstLetter = x.substring(j,j+1);
+                            //position = x.indexOf("H")-1;
+                            for (int k = 0; k < values.length; k++) {
+                                if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
+                                    Cards temp = new Cards(suits[1], values[k]);
+                                    hand[position] = temp;
+                                    position++;
+                                    System.out.println("Hposition: " + position);
+                                }
+                            }
+                            
+                        }
+                        break;
+                    case "D":
+                        for (int j = 1; j < x.length(); j++) {
+                            System.out.println("D: " + x);
+                            String firstLetter = x.substring(j,j+1);
+                            //int position = x.indexOf("D")-1;
+                            for (int k = 0; k < values.length; k++) {
+                                if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
+                                    Cards temp = new Cards(suits[2], values[k]);
+                                    hand[position] = temp;
+                                    position++;
+                                    System.out.println("Dposition: " + position);
+                                }
+                            }
+                            
+                        }
+                        break;
+                    case "C":
+                        for (int j = 1; j < x.length(); j++) {
+                            System.out.println("C: " + x);
+                            String firstLetter = x.substring(j,j+1);
+                            //int position = x.indexOf("H")-1;
+                            for (int k = 0; k < values.length; k++) {
+                                if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
+                                    Cards temp = new Cards(suits[3], values[k]);
+                                    hand[position] = temp;
+                                    position++;
+                                    System.out.println("Cposition: " + position);
+                                }
+                            }
+                            
+                        }
+                        break;
+                }
+                }
+            return hand;
+    }
+    public Cards[] getSouthHand(){
+        Cards[] hand = new Cards[13];
+         String [] south = input.getSouth();
+            int position = 0;
+            for(String x: south){
+                
+                switch(x.substring(0, 1)) {
+                    case "S":
+                        for (int j = 1; j < x.length(); j++) {
+                            System.out.println("S " + x);
+                            String firstLetter = x.substring(j,j+1);
+                            
+                            for (int k = 0; k < values.length; k++) {
+                                if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
+                                    Cards temp = new Cards(suits[0], values[k]);
+                                    hand[position] = temp;
+                                    position++;
+                                    System.out.println("Sposition: " + position);
+                                }
+                            }
+                            
+                        }
+                        break;
+                    case "H":
+                        for (int j = 1; j < x.length(); j++) {
+                            System.out.println("H " + x);
+                            String firstLetter = x.substring(j,j+1);
+                            //position = x.indexOf("H")-1;
+                            for (int k = 0; k < values.length; k++) {
+                                if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
+                                    Cards temp = new Cards(suits[1], values[k]);
+                                    hand[position] = temp;
+                                    position++;
+                                    System.out.println("Hposition: " + position);
+                                }
+                            }
+                            
+                        }
+                        break;
+                    case "D":
+                        for (int j = 1; j < x.length(); j++) {
+                            System.out.println("D: " + x);
+                            String firstLetter = x.substring(j,j+1);
+                            //int position = x.indexOf("D")-1;
+                            for (int k = 0; k < values.length; k++) {
+                                if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
+                                    Cards temp = new Cards(suits[2], values[k]);
+                                    hand[position] = temp;
+                                    position++;
+                                    System.out.println("Dposition: " + position);
+                                }
+                            }
+                            
+                        }
+                        break;
+                    case "C":
+                        for (int j = 1; j < x.length(); j++) {
+                            System.out.println("C: " + x);
+                            String firstLetter = x.substring(j,j+1);
+                            //int position = x.indexOf("H")-1;
+                            for (int k = 0; k < values.length; k++) {
+                                if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
+                                    Cards temp = new Cards(suits[3], values[k]);
+                                    hand[position] = temp;
+                                    position++;
+                                    System.out.println("Cposition: " + position);
+                                }
+                            }
+                            
+                        }
+                        break;
+                }
+                }
+            return hand;
+    }
     
     }
 

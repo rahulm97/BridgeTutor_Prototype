@@ -15,10 +15,10 @@ public class test {
         //Deck deck = new Deck();
         Rules rules = new Rules();
         Player south, north, west, east;
-        south = new Player(hands.getHand1());
-        north = new Player(hands.getHand2());
-        west = new Player(hands.getHand3());
-        east = new Player(hands.getHand4());
+        south = new Player(hands.getSouthHand());
+        north = new Player(hands.getNorthHand());
+        west = new Player(hands.getWestHand());
+        east = new Player(hands.getEastHand());
         Board board = new Board(south, north, west, east);
         board.nextTurn();
     }

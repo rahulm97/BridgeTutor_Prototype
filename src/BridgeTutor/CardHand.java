@@ -10,44 +10,45 @@ package BridgeTutor;
  * @author GAM
  */
 public class CardHand {
-    private Cards[] hand1;
-    private Cards[] hand2;
-    private Cards[] hand3;
-    private Cards[] hand4;
+    private Cards[] westHand;
+    private Cards[] southHand;
+    private Cards[] eastHand;
+    private Cards[] northHand;
     private Deck deck = new Deck();
+    
     public CardHand(){
-        hand1 = deck.shuffle(0);//, 13);
-        hand2 = deck.shuffle(13);//,26);
-        hand3 = deck.shuffle(26);//,39);
-        hand4 = deck.shuffle(39);//,52);
+        westHand = deck.getWestHand();//, 13);
+        southHand = deck.getSouthHand();//,26);
+        eastHand = deck.getEastHand();//,39);
+        northHand = deck.getNorthHand();//,52);
         printHands();
     }
     public void printHands() {
         for (int i = 0; i < 13; i++) {
-            System.out.println("hand1: " + hand1[i]);
+            System.out.println("west: " + westHand[i]);
         }
         for (int j = 0; j < 13; j++) {
-            System.out.println("hand2: " + hand2[j]);
+            System.out.println("south: " + southHand[j]);
         }
         for (int x = 0; x < 13; x++) {
-            System.out.println("hand3: " + hand3[x]);
+            System.out.println("east: " + eastHand[x]);
         }
         for (int z = 0; z < 13; z++) {
-            System.out.println("hand4: " + hand4[z]);
+            System.out.println("north: " + northHand[z]);
         }
     }
     
-    public Cards[] getHand1(){
-        return hand1;
+    public Cards[] getWestHand(){
+        return westHand;
     }
-    public Cards[] getHand2(){
-        return hand2;
+    public Cards[] getSouthHand(){
+        return southHand;
     }
-    public Cards[] getHand3(){
-        return hand3;
+    public Cards[] getEastHand(){
+        return eastHand;
     }
-    public Cards[] getHand4(){
-        return hand4;
+    public Cards[] getNorthHand(){
+        return northHand;
     }
     
 }
