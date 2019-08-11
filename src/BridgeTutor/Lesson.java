@@ -13,6 +13,7 @@ public class Lesson {
     private Deck deck;
     private CardHand playerHand;
     private Cards[] correctPlay;
+    private Cards[] bestPlay = new Cards[4];
     private String lessonName;
     private int lessonLevel;
     private double successRate;
@@ -20,17 +21,25 @@ public class Lesson {
     
     public Lesson(){
         input = new Input();
+        deck = new Deck();
     }
     public void nextLesson() {
         
     }
-    public Cards[] bestPlay(int trick){
-    Cards[] bestPlay = new Cards[4];   
+    public void bestPlay(int trick){  
+        //bestPlay = new Cards[10];
     String best = input.getBest(trick);
     String[] temp = best.split(",");
-        for (int i = 0; i < 10; i++) {
-            
+        
+    int count = 0;
+        for (String x : temp) {
+            bestPlay[count] = deck.toCard(x);
+            count++;
         }
-    return bestPlay;
+    
+    }
+    
+    public Cards[] getBestPlay(){
+        return bestPlay;
     }
 }

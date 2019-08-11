@@ -64,6 +64,22 @@ public class Deck {
             return hand;
         }
     
+    public Cards toCard(String convert) {
+        Cards cardWanted = new Cards();
+        for (int i = 0; i < 4; i++) {
+            if (convert.substring(1).equals(suits[i].toString())) {
+                for (int j = 0; j < 13; j++) {
+                    if (convert.substring(0, 1).equals(values[j].toString())) {
+                        cardWanted = cards[i*13+j];
+                        break;
+                    }
+                }
+            }
+            
+        }
+        return cardWanted;
+    }
+    
     public Cards[] getWestHand(){
         Cards[] hand = new Cards[13];
          String [] west = input.getWest();

@@ -12,6 +12,7 @@ package BridgeTutor;
 public class test {
     public static void main(String[] args) {
         CardHand hands = new CardHand();
+        
         //Deck deck = new Deck();
         Rules rules = new Rules();
         Player south, north, west, east;
@@ -20,6 +21,12 @@ public class test {
         west = new Player(hands.getWestHand());
         east = new Player(hands.getEastHand());
         Board board = new Board(south, north, west, east);
+        Lesson lesson = new Lesson();
+        lesson.bestPlay(1);
+        Cards[] cards = lesson.getBestPlay();
+        for (int i = 0; i < 4; i++) {
+            System.out.println("best play: " +cards[i]);
+        }
         board.nextTurn();
     }
 }
