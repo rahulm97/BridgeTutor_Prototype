@@ -22,10 +22,9 @@ public class test {
         east = new Player(hands.getEastHand());
         Board board = new Board(south, north, west, east);
         Lesson lesson = new Lesson();
-        lesson.bestPlay(1);
-        Cards[] cards = lesson.getBestPlay();
+        Cards[] bestpLAYSADASD = lesson.bestPlay(1);
         for (int i = 0; i < 4; i++) {
-            System.out.println("best play: " +cards[i]);
+            System.out.println("best play: " +bestpLAYSADASD[i]);
         }
         board.nextTurn();
     }

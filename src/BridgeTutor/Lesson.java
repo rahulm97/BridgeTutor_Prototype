@@ -26,7 +26,7 @@ public class Lesson {
     public void nextLesson() {
         
     }
-    public void bestPlay(int trick){  
+    public Cards[] bestPlay(int trick){  
         //bestPlay = new Cards[10];
     String best = input.getBest(trick);
     String[] temp = best.split(",");
@@ -36,7 +36,7 @@ public class Lesson {
             bestPlay[count] = deck.toCard(x);
             count++;
         }
-    
+    return bestPlay;
     }
     
     public Cards[] getBestPlay(){

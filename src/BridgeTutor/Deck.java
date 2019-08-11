@@ -109,7 +109,6 @@ public class Deck {
                         for (int j = 1; j < x.length(); j++) {
                             
                             String firstLetter = x.substring(j,j+1);
-                            //position = x.indexOf("H")-1;
                             for (int k = 0; k < values.length; k++) {
                                 if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
                                     Cards temp = new Cards(suits[1], values[k]);
