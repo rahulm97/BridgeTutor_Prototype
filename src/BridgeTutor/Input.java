@@ -126,6 +126,10 @@ public class Input {
     }
     
     public String[] getSouth() {
+    return south;
+    }
+    
+    public String[] getEast() {
     return east;
     }
     

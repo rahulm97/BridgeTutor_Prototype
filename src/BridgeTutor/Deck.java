@@ -14,14 +14,16 @@ public class Deck {
     private Cards pop;
     private Cards.CardValue[] values = new Cards.CardValue[13];
     private Cards.Suit[] suits = new Cards.Suit[4];
+    private Input input;
     public Deck(){
          populate();
+         input = new Input();
     }
     public Deck(String textFile){
         
     }
     public void populate() {
-        values[0] = Cards.CardValue.TWO; //= [Cards.CardValue.TWO, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE, Cards.CardValue.THREE,Cards.CardValue.THREE];
+        values[0] = Cards.CardValue.TWO; 
         values[1] = Cards.CardValue.THREE;
         values[2] = Cards.CardValue.FOUR;
         values[3] = Cards.CardValue.FIVE;
@@ -52,11 +54,44 @@ public class Deck {
     }   
         
     public Cards[] shuffle(int start) {
+        String[] west, south, east, north;
         Cards[] hand = new Cards[13];// make random order of cards to shuffle
         for (int i = 0; i < 13; i++) {
             hand[i] = cards[start + i];
             
+            //code to use lessons input
+            
+            int val = 0;
+            west = input.getWest();
+            for(String x: west){
+                switch(x.substring(0, 1)) {
+                    case "S":
+                        for (int j = 1; j < x.length()-1; j++) {
+                            String firstLetter = x.substring(j,j+1);
+                            
+                            for (int k = 0; k < values.length; k++) {
+                                if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
+                                    
+                                }
+                            }
+                            
+                        }
+                    case "H":
+                        
+                    case "D":
+                        
+                    case "C":
+                        
+                }
+                    
+                }
+            }
+            south =input.getSouth();
+            east =input.getEast();
+            north = input.getNorth();
+            
+            return hand;
         }
-    return hand;
+    
     }
-}
+
