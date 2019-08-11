@@ -24,17 +24,21 @@ public class CardHand {
         printHands();
     }
     public void printHands() {
+        System.out.println("west: ");
         for (int i = 0; i < 13; i++) {
-            System.out.println("west: " + westHand[i]);
+            System.out.print(westHand[i]+", ");
         }
+        System.out.println("\nnorth: ");
         for (int j = 0; j < 13; j++) {
-            System.out.println("south: " + southHand[j]);
+            System.out.print(northHand[j]+", ");
         }
+        System.out.println("\neast: ");
         for (int x = 0; x < 13; x++) {
-            System.out.println("east: " + eastHand[x]);
+            System.out.print(eastHand[x]+", ");
         }
+        System.out.println("\nsouth: ");
         for (int z = 0; z < 13; z++) {
-            System.out.println("north: " + northHand[z]);
+            System.out.print(southHand[z]+", ");
         }
     }
     

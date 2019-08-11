@@ -133,7 +133,7 @@ public class Input {
     return east;
     }
     
-    public String[] getBest() {
-    return best;
+    public String getBest(int trick) {
+    return best[trick];
     }
 }

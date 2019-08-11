@@ -16,12 +16,21 @@ public class Lesson {
     private String lessonName;
     private int lessonLevel;
     private double successRate;
-    
+    private Input input;
     
     public Lesson(){
-        
+        input = new Input();
     }
     public void nextLesson() {
         
+    }
+    public Cards[] bestPlay(int trick){
+    Cards[] bestPlay = new Cards[4];   
+    String best = input.getBest(trick);
+    String[] temp = best.split(",");
+        for (int i = 0; i < 10; i++) {
+            
+        }
+    return bestPlay;
     }
 }

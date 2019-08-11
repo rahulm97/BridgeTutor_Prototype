@@ -75,7 +75,7 @@ public class Deck {
                 switch(x.substring(0, 1)) {
                     case "S":
                         for (int j = 1; j < x.length(); j++) {
-                            System.out.println("S " + x);
+                            
                             String firstLetter = x.substring(j,j+1);
                             
                             for (int k = 0; k < values.length; k++) {
@@ -83,7 +83,7 @@ public class Deck {
                                     Cards temp = new Cards(suits[0], values[k]);
                                     hand[position] = temp;
                                     position++;
-                                    System.out.println("Sposition: " + position);
+                                   
                                 }
                             }
                             
@@ -91,7 +91,7 @@ public class Deck {
                         break;
                     case "H":
                         for (int j = 1; j < x.length(); j++) {
-                            System.out.println("H " + x);
+                            
                             String firstLetter = x.substring(j,j+1);
                             //position = x.indexOf("H")-1;
                             for (int k = 0; k < values.length; k++) {
@@ -99,7 +99,7 @@ public class Deck {
                                     Cards temp = new Cards(suits[1], values[k]);
                                     hand[position] = temp;
                                     position++;
-                                    System.out.println("Hposition: " + position);
+                                    
                                 }
                             }
                             
@@ -107,7 +107,7 @@ public class Deck {
                         break;
                     case "D":
                         for (int j = 1; j < x.length(); j++) {
-                            System.out.println("D: " + x);
+                           
                             String firstLetter = x.substring(j,j+1);
                             //int position = x.indexOf("D")-1;
                             for (int k = 0; k < values.length; k++) {
@@ -115,7 +115,7 @@ public class Deck {
                                     Cards temp = new Cards(suits[2], values[k]);
                                     hand[position] = temp;
                                     position++;
-                                    System.out.println("Dposition: " + position);
+                                    
                                 }
                             }
                             
@@ -123,7 +123,7 @@ public class Deck {
                         break;
                     case "C":
                         for (int j = 1; j < x.length(); j++) {
-                            System.out.println("C: " + x);
+                           
                             String firstLetter = x.substring(j,j+1);
                             //int position = x.indexOf("H")-1;
                             for (int k = 0; k < values.length; k++) {
@@ -131,7 +131,7 @@ public class Deck {
                                     Cards temp = new Cards(suits[3], values[k]);
                                     hand[position] = temp;
                                     position++;
-                                    System.out.println("Cposition: " + position);
+                                   
                                 }
                             }
                             
@@ -151,7 +151,7 @@ public class Deck {
                 switch(x.substring(0, 1)) {
                     case "S":
                         for (int j = 1; j < x.length(); j++) {
-                            System.out.println("S " + x);
+                            
                             String firstLetter = x.substring(j,j+1);
                             
                             for (int k = 0; k < values.length; k++) {
@@ -159,7 +159,7 @@ public class Deck {
                                     Cards temp = new Cards(suits[0], values[k]);
                                     hand[position] = temp;
                                     position++;
-                                    System.out.println("Sposition: " + position);
+                                   
                                 }
                             }
                             
@@ -167,7 +167,7 @@ public class Deck {
                         break;
                     case "H":
                         for (int j = 1; j < x.length(); j++) {
-                            System.out.println("H " + x);
+                            
                             String firstLetter = x.substring(j,j+1);
                             //position = x.indexOf("H")-1;
                             for (int k = 0; k < values.length; k++) {
@@ -175,7 +175,7 @@ public class Deck {
                                     Cards temp = new Cards(suits[1], values[k]);
                                     hand[position] = temp;
                                     position++;
-                                    System.out.println("Hposition: " + position);
+                                   
                                 }
                             }
                             
@@ -183,7 +183,7 @@ public class Deck {
                         break;
                     case "D":
                         for (int j = 1; j < x.length(); j++) {
-                            System.out.println("D: " + x);
+                            
                             String firstLetter = x.substring(j,j+1);
                             //int position = x.indexOf("D")-1;
                             for (int k = 0; k < values.length; k++) {
@@ -191,7 +191,7 @@ public class Deck {
                                     Cards temp = new Cards(suits[2], values[k]);
                                     hand[position] = temp;
                                     position++;
-                                    System.out.println("Dposition: " + position);
+                                    
                                 }
                             }
                             
@@ -199,7 +199,7 @@ public class Deck {
                         break;
                     case "C":
                         for (int j = 1; j < x.length(); j++) {
-                            System.out.println("C: " + x);
+                            
                             String firstLetter = x.substring(j,j+1);
                             //int position = x.indexOf("H")-1;
                             for (int k = 0; k < values.length; k++) {
@@ -207,7 +207,7 @@ public class Deck {
                                     Cards temp = new Cards(suits[3], values[k]);
                                     hand[position] = temp;
                                     position++;
-                                    System.out.println("Cposition: " + position);
+                                    
                                 }
                             }
                             
@@ -226,7 +226,7 @@ public class Deck {
                 switch(x.substring(0, 1)) {
                     case "S":
                         for (int j = 1; j < x.length(); j++) {
-                            System.out.println("S " + x);
+                            
                             String firstLetter = x.substring(j,j+1);
                             
                             for (int k = 0; k < values.length; k++) {
@@ -234,7 +234,7 @@ public class Deck {
                                     Cards temp = new Cards(suits[0], values[k]);
                                     hand[position] = temp;
                                     position++;
-                                    System.out.println("Sposition: " + position);
+                                   
                                 }
                             }
                             
@@ -242,7 +242,7 @@ public class Deck {
                         break;
                     case "H":
                         for (int j = 1; j < x.length(); j++) {
-                            System.out.println("H " + x);
+                            
                             String firstLetter = x.substring(j,j+1);
                             //position = x.indexOf("H")-1;
                             for (int k = 0; k < values.length; k++) {
@@ -250,7 +250,7 @@ public class Deck {
                                     Cards temp = new Cards(suits[1], values[k]);
                                     hand[position] = temp;
                                     position++;
-                                    System.out.println("Hposition: " + position);
+                                    
                                 }
                             }
                             
@@ -258,7 +258,7 @@ public class Deck {
                         break;
                     case "D":
                         for (int j = 1; j < x.length(); j++) {
-                            System.out.println("D: " + x);
+                           
                             String firstLetter = x.substring(j,j+1);
                             //int position = x.indexOf("D")-1;
                             for (int k = 0; k < values.length; k++) {
@@ -266,7 +266,7 @@ public class Deck {
                                     Cards temp = new Cards(suits[2], values[k]);
                                     hand[position] = temp;
                                     position++;
-                                    System.out.println("Dposition: " + position);
+                                  
                                 }
                             }
                             
@@ -274,7 +274,7 @@ public class Deck {
                         break;
                     case "C":
                         for (int j = 1; j < x.length(); j++) {
-                            System.out.println("C: " + x);
+                           
                             String firstLetter = x.substring(j,j+1);
                             //int position = x.indexOf("H")-1;
                             for (int k = 0; k < values.length; k++) {
@@ -282,7 +282,7 @@ public class Deck {
                                     Cards temp = new Cards(suits[3], values[k]);
                                     hand[position] = temp;
                                     position++;
-                                    System.out.println("Cposition: " + position);
+                                   
                                 }
                             }
                             
@@ -301,7 +301,7 @@ public class Deck {
                 switch(x.substring(0, 1)) {
                     case "S":
                         for (int j = 1; j < x.length(); j++) {
-                            System.out.println("S " + x);
+                            
                             String firstLetter = x.substring(j,j+1);
                             
                             for (int k = 0; k < values.length; k++) {
@@ -309,7 +309,7 @@ public class Deck {
                                     Cards temp = new Cards(suits[0], values[k]);
                                     hand[position] = temp;
                                     position++;
-                                    System.out.println("Sposition: " + position);
+                                    
                                 }
                             }
                             
@@ -317,7 +317,7 @@ public class Deck {
                         break;
                     case "H":
                         for (int j = 1; j < x.length(); j++) {
-                            System.out.println("H " + x);
+                            
                             String firstLetter = x.substring(j,j+1);
                             //position = x.indexOf("H")-1;
                             for (int k = 0; k < values.length; k++) {
@@ -325,7 +325,7 @@ public class Deck {
                                     Cards temp = new Cards(suits[1], values[k]);
                                     hand[position] = temp;
                                     position++;
-                                    System.out.println("Hposition: " + position);
+                                    
                                 }
                             }
                             
@@ -333,7 +333,7 @@ public class Deck {
                         break;
                     case "D":
                         for (int j = 1; j < x.length(); j++) {
-                            System.out.println("D: " + x);
+                           
                             String firstLetter = x.substring(j,j+1);
                             //int position = x.indexOf("D")-1;
                             for (int k = 0; k < values.length; k++) {
@@ -341,7 +341,7 @@ public class Deck {
                                     Cards temp = new Cards(suits[2], values[k]);
                                     hand[position] = temp;
                                     position++;
-                                    System.out.println("Dposition: " + position);
+               
                                 }
                             }
                             
@@ -349,7 +349,7 @@ public class Deck {
                         break;
                     case "C":
                         for (int j = 1; j < x.length(); j++) {
-                            System.out.println("C: " + x);
+                            
                             String firstLetter = x.substring(j,j+1);
                             //int position = x.indexOf("H")-1;
                             for (int k = 0; k < values.length; k++) {
@@ -357,7 +357,7 @@ public class Deck {
                                     Cards temp = new Cards(suits[3], values[k]);
                                     hand[position] = temp;
                                     position++;
-                                    System.out.println("Cposition: " + position);
+                                    
                                 }
                             }
                             

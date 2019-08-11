@@ -76,6 +76,11 @@ public class Cards {
         return cardValue;
     }
     
+    public Cards makeCard(String c){
+        Cards card = new Cards();
+        return card;
+    }
+    
     public String toString() {
         return suit + "" + cardValue;
     }

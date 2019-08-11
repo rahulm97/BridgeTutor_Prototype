@@ -13,6 +13,7 @@ public class Board {
     private Player north, south, west, east;
     private int scoreNS, scoreWE;
     private Player[] turn;
+    private int trick = 0;
     private int turnCount = 0;
     private Rules rules;
     private Cards[] cardsLeft;
@@ -34,6 +35,7 @@ public class Board {
     public void nextTurn(){
         if (turnCount > 3) { // if all players have played reset the counter and check the winner to score the trick, and reset the board
             turnCount = 0;
+            trick++;
             checkWinner();
             
             
@@ -49,9 +51,9 @@ public class Board {
     public void checkWinner() {
          int winner = 0;
          int maximum = cardsPlayed[0].getValue().getValue();
-        for (int i = 0; i < 2; i++) {
+        for (int i = 0; i < 3; i++) {
             
-             if (cardsPlayed[i].getValue().getValue() < cardsPlayed[i+1].getValue().getValue()) {
+             if (maximum < cardsPlayed[i+1].getValue().getValue()) {
                  maximum = cardsPlayed[i+1].getValue().getValue();
                  winner = i+1;
              }
