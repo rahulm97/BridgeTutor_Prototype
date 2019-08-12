@@ -33,14 +33,12 @@ public class Player {
         
     }*/
      public void removeCard(Cards card){
-         System.out.println("removed method");
-         System.out.println("\nplayer name " + name);
-         for (int i = 0; i < 13; i++) {
-             System.out.print(this.hand[i] + " ");
-         }
+         ///System.out.println("removed method");
+         //System.out.println("\nplayer name " + name);
+        
          
          //System.out.println("card: " + );
-         System.out.println("\nplayer removed " + name);
+        // System.out.println("\nplayer removed " + name);
         for (int i = 0; i < 13; i++) {
             
             if(card.toString().equals((this.hand[i]).toString())){
@@ -54,7 +52,7 @@ public class Player {
             else{
                 
             }
-            System.out.print(this.hand[i] + " ");
+           // System.out.print(this.hand[i] + " ");
         }
     }
      

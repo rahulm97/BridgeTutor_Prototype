@@ -69,9 +69,9 @@ public class Board {
         int winner = 0;
         boolean[] hearts = new boolean[4];
         for (int i = 0; i < 4; i++) {
-            System.out.println(cardsPlayed[i].toString());
+            System.out.println("\n"+cardsPlayed[i].toString());
         }
-        System.out.println("tricks: " + trick + " count : "+ turnCount);
+        //System.out.println("tricks: " + trick + " count : "+ turnCount);
         for (int i = 0; i < 4; i++) {
             if(cardsPlayed[i].getSuit() == Cards.Suit.HEARTS){
                 heartCounter++;
@@ -117,7 +117,7 @@ public class Board {
         
         turnCount=0;
         
-        if ((turn[0].getName()).equals("west")||(turn[0].getName()).equals("east")) {
+        if ((turn[winner].getName()).equals("west")||(turn[winner].getName()).equals("east")) {
             scoreWE++;
             //System.out.println("west/east");
         }
@@ -127,11 +127,11 @@ public class Board {
         }
         //turnCount = 0;
        // trick++;
-        //System.out.println("scoreWE: " + scoreWE);
-        //System.out.println("scoreNS: " + scoreNS);
+        System.out.println("scoreWE: " + scoreWE);
+        System.out.println("scoreNS: " + scoreNS);
         //System.out.println("winner turn: " + turn[winner].getName());
         String winnerName= turn[winner].getName();
-        System.out.println("winner: " + winner + " " + winnerName);
+        //System.out.println("winner: " + winner + " " + winnerName);
         
         changeTurn(winnerName);
         counter = 0;
@@ -186,8 +186,8 @@ public class Board {
       //  for (int i = 0; i < 3; i++) { // empty out the cards on table for next trick
        //         cardsPlayed[i] = null;
           //  }
-          if (trick>=10){
-              System.out.println("done");
+          if (trick>8){
+              System.exit(0);
           }
           else{
         trick++;   
@@ -225,12 +225,12 @@ public class Board {
         for (int i = 0; i < 13; i++) {
             
             if(trick >= 8){
-                System.out.println("equals "+temp.toString());
+            //    System.out.println("equals "+temp.toString());
               //  System.out.println("turn count: " + turnCount);
-                System.out.println((turn[turnCount].getHand()[i]).toString());
+             //   System.out.println((turn[turnCount].getHand()[i]).toString());
             }
             if((temp.toString()).equals((turn[turnCount].getHand()[i]).toString())){
-                System.out.println("found " + i);
+          //      System.out.println("found " + i);
                 position = i;
                 
                 break;
@@ -241,17 +241,12 @@ public class Board {
             //System.out.println("true "+temp+" turn count: "+turnCount);
         }
         else{
-            System.out.println("position: " + position);
-            for (int i = 0; i < 13; i++) {
-                System.out.println("i: "+ i +" " + a[i]);
-            }
-            
             System.out.println("Illegal move");
         }
         
         }
         
-        System.out.println("temp: " + temp);
+       // System.out.println("temp: " + temp);
          turn[turnCount].removeCard(temp);
         counter++;
         turnCount++;
