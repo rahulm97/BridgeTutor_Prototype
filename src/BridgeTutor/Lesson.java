@@ -14,7 +14,7 @@ public class Lesson {
     private Deck deck;
     private CardHand playerHand;
     private Cards[] correctPlay;
-    private Cards[] bestPlay = new Cards[4];
+    private Cards[] bestPlay = new Cards[4];//create a best hand array to store the best possible play for a trick
     private String lessonName;
     private int lessonLevel;
     private double successRate;
@@ -29,7 +29,7 @@ public class Lesson {
 
     }
 
-    public Cards[] bestPlay(int trick) {
+    public Cards[] bestPlay(int trick) { //checkng what the best play is for a trick
         String best = input.getBest(trick);
         String[] temp = best.split(",");
 

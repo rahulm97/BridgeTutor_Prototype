@@ -11,7 +11,7 @@ package BridgeTutor;
  */
 public class Prototype {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { //main class to run project
         CardHand hands = new CardHand();
         Player west, north, east, south;
         west = new Player(hands.getWestHand(), "west");

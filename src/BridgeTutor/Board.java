@@ -15,12 +15,12 @@ public class Board {
 
     private Player north, south, west, east;
     private int scoreNS, scoreWE;
-    private Player[] turn;
+    private Player[] turn; //keeps track of player turns
     private int trick = 0;
     private int turnCount = 0;
     private Rules rules;
     private Cards[] cardsLeft;
-    private Cards[] cardsPlayed;
+    private Cards[] cardsPlayed; //cards on table
     private Tutor tutor;
     private Lesson lesson;
     public Board thisBoard;
@@ -31,7 +31,7 @@ public class Board {
         turn = new Player[4];
         rules = new Rules();
         lesson = new Lesson();
-        changeTurn("west");
+        changeTurn("west"); //start at west
 
     }
 
@@ -49,48 +49,48 @@ public class Board {
     }
 
     public void nextTurn() {
-        if (turnCount > 3) {
+        if (turnCount > 3) { //if turn 4 has passed check the winner for trick
             checkWinner();
         } else {
-            play();
+            play(); //next turn
         }
     }
 
-    public void checkWinner() {
-        int heartCounter = 0;
+    public void checkWinner() { //checks cards on table for winner
+        int heartCounter = 0; //trumps
         int winner = 0;
-        boolean[] hearts = new boolean[4];
+        boolean[] hearts = new boolean[4]; //keep track of trumps
         System.out.println("");
         System.out.println("Trick Number " + (trick + 1) + ":");
         System.out.println("");
         for (int i = 0; i < 4; i++) {
-            System.out.println(turn[i].getName() + ": " + cardsPlayed[i].toString() + " ");
+            System.out.println(turn[i].getName() + ": " + cardsPlayed[i].toString() + " "); //displays player and card played
         }
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++) { //checks for hearts
             if (cardsPlayed[i].getSuit() == Cards.Suit.HEARTS) {
                 heartCounter++;
                 hearts[i] = true;
             }
         }
-        if (heartCounter == 0 || heartCounter == 4) {
+        if (heartCounter == 0 || heartCounter == 4) { //default case no trumps
 
             int maximum = (cardsPlayed[0].getValue()).getValue();
             for (int i = 0; i < 3; i++) {
 
-                if (maximum < (cardsPlayed[i + 1].getValue()).getValue()) {
+                if (maximum < (cardsPlayed[i + 1].getValue()).getValue()) { //checks the highest card value
                     maximum = (cardsPlayed[i + 1].getValue()).getValue();
                     winner = i + 1;
 
                 }
             }
-        } else if (heartCounter == 1) {
+        } else if (heartCounter == 1) { //if theres only one trump they win
             for (int i = 0; i < 4; i++) {
                 if (hearts[i] == true) {
                     winner = i;
                 }
             }
-        } else {
+        } else { //2 or 3 trumps then cards are compared
             int maximum = (cardsPlayed[0].getValue()).getValue();
             for (int i = 0; i < 3; i++) {
 
@@ -105,28 +105,28 @@ public class Board {
         turnCount = 0;
 
         if ((turn[winner].getName()).equals("west") || (turn[winner].getName()).equals("east")) {
-            scoreWE++;
+            scoreWE++; //WE pair wins
 
         } else {
-            scoreNS++;
+            scoreNS++; //NS pair wins
         }
 
         System.out.println("");
-        System.out.println("Winner: " + turn[winner].getName());
+        System.out.println("Winner: " + turn[winner].getName()); //display the trick's winner
         System.out.println("");
         System.out.println("scoreWE: " + scoreWE);
         System.out.println("scoreNS: " + scoreNS);
 
         String winnerName = turn[winner].getName();
 
-        changeTurn(winnerName);
+        changeTurn(winnerName); //makes winner start the next turn
         counter = 0;
 
-        reset();
+        reset(); //cleans up board
 
     }
 
-    public void changeTurn(String winnerName) {
+    public void changeTurn(String winnerName) { //takes in the string with winners name and turns accordingly
 
         switch (winnerName) {
             case "west":
@@ -184,41 +184,38 @@ public class Board {
 
     }
 
-    public void play() {
+    public void play() { //play the turn
 
         int position = 0;
 
-        Cards temp = (lesson.bestPlay(trick))[turnCount];
+        Cards temp = (lesson.bestPlay(trick))[turnCount]; //get the best card to play
 
         if (turnCount < 1) {
 
-            cardsPlayed[0] = temp;
+            cardsPlayed[0] = temp; //can play any card
 
         } else {
-            boolean[] a = rules.checkHand(turn[turnCount].getHand(), cardsPlayed[0].getSuit());
+            boolean[] a = rules.checkHand(turn[turnCount].getHand(), cardsPlayed[0].getSuit()); //get suits allowed to be played
 
             for (int i = 0; i < 13; i++) {
 
-                if (trick >= 8) {
-
-                }
-                if ((temp.toString()).equals((turn[turnCount].getHand()[i]).toString())) {
+                if ((temp.toString()).equals((turn[turnCount].getHand()[i]).toString())) { //sets position equals to position in players hand so they can compare to boolean array of cards that can be played
 
                     position = i;
 
                     break;
                 }
             }
-            if (a[position] == true) {
+            if (a[position] == true) { //boolean array checked vs position
                 cardsPlayed[turnCount] = temp;
 
             } else {
-                System.out.println("Illegal move");
+                System.out.println("Illegal move"); //doesnt let player play the move
             }
 
         }
 
-        turn[turnCount].removeCard(temp);
+        turn[turnCount].removeCard(temp); //take card away from players hand
         counter++;
         turnCount++;
         nextTurn();

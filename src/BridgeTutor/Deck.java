@@ -26,7 +26,7 @@ public class Deck {
 
     }
 
-    public void populate() {
+    public void populate() { //populating the deck with cards
         values[0] = Cards.CardValue.TWO;
         values[1] = Cards.CardValue.THREE;
         values[2] = Cards.CardValue.FOUR;
@@ -41,12 +41,13 @@ public class Deck {
         values[11] = Cards.CardValue.KING;
         values[12] = Cards.CardValue.ACE;
 
+        // the 4 different suits
         suits[0] = Cards.Suit.SPADES;
         suits[1] = Cards.Suit.HEARTS;
         suits[2] = Cards.Suit.DIAMONDS;
         suits[3] = Cards.Suit.CLUBS;
         int i = 0;
-        for (Cards.Suit x : suits) {
+        for (Cards.Suit x : suits) { //creating the cards
             for (Cards.CardValue y : values) {
                 pop = new Cards(x, y);
                 cards[i] = pop;
@@ -56,7 +57,7 @@ public class Deck {
 
     }
 
-    public Cards[] shuffle(int start) {
+    public Cards[] shuffle(int start) { //shuffling the deck
         String[] west, south, east, north;
         Cards[] hand = new Cards[13];// make random order of cards to shuffle
 
@@ -67,7 +68,7 @@ public class Deck {
         return hand;
     }
 
-    public Cards toCard(String convert) {
+    public Cards toCard(String convert) { //converting to a card
         Cards cardWanted = new Cards();
         for (int i = 0; i < 4; i++) {
             if (convert.substring(1).equals(suits[i].toString())) {
@@ -83,21 +84,21 @@ public class Deck {
         return cardWanted;
     }
 
-    public Cards[] getWestHand() {
+    public Cards[] getWestHand() { //getting the cards available for west to play
         Cards[] hand = new Cards[13];
         String[] west = input.getWest();
         int count = 0;
         int position = 0;
-        for (String x : west) {
+        for (String x : west) { //taking the individual cards
 
-            switch (x.substring(0, 1)) {
+            switch (x.substring(0, 1)) { // determing the suit of the card 
                 case "S":
                     for (int j = 1; j < x.length(); j++) {
 
                         String firstLetter = x.substring(j, j + 1);
 
                         for (int k = 0; k < values.length; k++) {
-                            if ((firstLetter.equals(values[k].toString().substring(0, 1)))) {
+                            if ((firstLetter.equals(values[k].toString().substring(0, 1)))) { // checking the value of the card
                                 Cards temp = new Cards(suits[0], values[k]);
                                 hand[position] = temp;
                                 position++;
@@ -160,7 +161,7 @@ public class Deck {
         return hand;
     }
 
-    public Cards[] getNorthHand() {
+    public Cards[] getNorthHand() {//getting the cards available for north to play
         Cards[] hand = new Cards[13];
         String[] north = input.getNorth();
         int position = 0;
@@ -236,7 +237,7 @@ public class Deck {
         return hand;
     }
 
-    public Cards[] getEastHand() {
+    public Cards[] getEastHand() { //getting the cards available for east to play
         Cards[] hand = new Cards[13];
         String[] east = input.getEast();
         int position = 0;
@@ -312,7 +313,7 @@ public class Deck {
         return hand;
     }
 
-    public Cards[] getSouthHand() {
+    public Cards[] getSouthHand() { //getting the cards available for south to play
         Cards[] hand = new Cards[13];
         String[] south = input.getSouth();
         int position = 0;

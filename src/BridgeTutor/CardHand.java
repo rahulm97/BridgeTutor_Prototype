@@ -26,10 +26,10 @@ public class CardHand {
     }
 
     public void printHands() {
-        System.out.println("west: ");
+        System.out.println("west: ");//displays whose cards are being shown
         for (int i = 0; i < 13; i++) {
 
-            System.out.print(westHand[i] + " ");
+            System.out.print(westHand[i] + " "); //displays what cards are available to west.
         }
         System.out.println("\nnorth: ");
         for (int j = 0; j < 13; j++) {
