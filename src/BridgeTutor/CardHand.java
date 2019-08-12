@@ -18,9 +18,9 @@ public class CardHand {
     
     public CardHand(){
         westHand = deck.getWestHand();//, 13);
-        southHand = deck.getSouthHand();//,26);
+        northHand = deck.getNorthHand();
         eastHand = deck.getEastHand();//,39);
-        northHand = deck.getNorthHand();//,52);
+        southHand = deck.getSouthHand();
         printHands();
     }
     public void printHands() {
@@ -45,14 +45,15 @@ public class CardHand {
     public Cards[] getWestHand(){
         return westHand;
     }
-    public Cards[] getSouthHand(){
-        return southHand;
+    public Cards[] getNorthHand(){
+        return northHand;
     }
     public Cards[] getEastHand(){
         return eastHand;
     }
-    public Cards[] getNorthHand(){
-        return northHand;
+    
+    public Cards[] getSouthHand(){
+        return southHand;
     }
     
 }

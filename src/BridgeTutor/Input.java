@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @author rahulmarajh
  */
 public class Input {
-    private String[] bid, west, north, south, east, best;
+    private String[] bid, west, north, east, south,  best;
     private String level, bidder, firstCard;
     
     public Input(){
@@ -80,12 +80,12 @@ public class Input {
             
             firstCard = sc.nextLine();
             best = new String [10];
-            
+            if(sc.hasNextLine()){
             for (int i = 0; i < 10; i++) {
                 String bestPlay = sc.nextLine();
-                best [i]=bestPlay.substring(0, bestPlay.length()-1);
+                best[i]=bestPlay.substring(0, bestPlay.length()-1);
             }   
-            
+            }
         }
         catch(FileNotFoundException ex) {
             System.out.println(
@@ -125,13 +125,15 @@ public class Input {
     return north;
     }
     
+    public String[] getEast() {
+    return east;
+    }
+    
     public String[] getSouth() {
     return south;
     }
     
-    public String[] getEast() {
-    return east;
-    }
+    
     
     public String getBest(int trick) {
     return best[trick];

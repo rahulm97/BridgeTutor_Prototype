@@ -15,6 +15,7 @@ public class Cards {
     
     
     public enum Suit {
+        NONE,
         SPADES,
         HEARTS,
         DIAMONDS,
@@ -25,6 +26,7 @@ public class Cards {
     }
     
     public enum CardValue {
+        ZERO(0),
         TWO(2),
         THREE(3),
         FOUR(4),
@@ -75,11 +77,7 @@ public class Cards {
     public CardValue getValue(){
         return cardValue;
     }
-    
-    public Cards makeCard(String c){
-        Cards card = new Cards();
-        return card;
-    }
+   
     
     public String toString() {
         return suit + "" + cardValue;

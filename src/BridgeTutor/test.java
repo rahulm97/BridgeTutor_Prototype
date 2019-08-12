@@ -15,17 +15,17 @@ public class test {
         
         //Deck deck = new Deck();
         Rules rules = new Rules();
-        Player south, north, west, east;
-        south = new Player(hands.getSouthHand());
-        north = new Player(hands.getNorthHand());
-        west = new Player(hands.getWestHand());
-        east = new Player(hands.getEastHand());
-        Board board = new Board(south, north, west, east);
+        Player  west, north, east, south;
+        west = new Player(hands.getWestHand(), "west");
+        north = new Player(hands.getNorthHand(), "north");
+        east = new Player(hands.getEastHand(), "east");
+        south = new Player(hands.getSouthHand(), "south");
+        Board board = new Board(west, north, east, south);
         Lesson lesson = new Lesson();
-        Cards[] bestpLAYSADASD = lesson.bestPlay(1);
-        for (int i = 0; i < 4; i++) {
-            System.out.println("best play: " +bestpLAYSADASD[i]);
-        }
-        board.nextTurn();
+       // Cards[] bestpLAYSADASD = lesson.bestPlay(1);
+       // for (int i = 0; i < 4; i++) {
+       //     System.out.println("best play: " +bestpLAYSADASD[i]);
+       // }
+        board.play();
     }
 }

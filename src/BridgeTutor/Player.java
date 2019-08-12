@@ -19,20 +19,50 @@ public class Player {
         
     }
     
-    public Player(Cards[] hand){
+    public Player(Cards[] hand, String name){
         this.hand = hand;
+        this.name = name;
     }
     
-    public void play(Cards card){ //use buttons for input of cards, if clicked hide...
+    /*public void play(Cards card){ //use buttons for input of cards, if clicked hide...
         for (int i = 0; i < 13; i++) {
             if (hand[i] == card) {
                 hand[i] = null;
             }
         } // maybe return card played and give parameter as a user input
         
+    }*/
+     public void removeCard(Cards card){
+         System.out.println("removed method");
+         System.out.println("\nplayer name " + name);
+         for (int i = 0; i < 13; i++) {
+             System.out.print(this.hand[i] + " ");
+         }
+         
+         //System.out.println("card: " + );
+         System.out.println("\nplayer removed " + name);
+        for (int i = 0; i < 13; i++) {
+            
+            if(card.toString().equals((this.hand[i]).toString())){
+                //System.out.println("card: " + card.toString());
+                
+                this.hand[i] = new Cards(Cards.Suit.NONE, Cards.CardValue.ZERO);
+                
+               
+               
+            }
+            else{
+                
+            }
+            System.out.print(this.hand[i] + " ");
+        }
     }
-    
+     
     public Cards[] getHand(){
         return hand;
+    }
+    
+    public String getName(){
+        return name;
     }
 }

@@ -24,11 +24,15 @@ public class Rules {
         return true;
     }
     
-    public boolean[] checkHand(Cards[] playerHand, Cards suit){ // makes an array with position of each card that can be played
+    public boolean[] checkHand(Cards[] playerHand, Cards.Suit suit){ // makes an array with position of each card that can be played
         int allowed = 0;
+        
         boolean[] cardsAllowed = new boolean[13];
-        for (int i = 0; i < playerHand.length; i++) {
-            if (playerHand[i].getSuit() == suit.getSuit()) {
+        for (int i = 0; i < 13; i++) {
+            cardsAllowed[i] = false;
+        }
+        for (int i = 0; i < cardsAllowed.length; i++) {
+            if (playerHand[i].getSuit() == suit || playerHand[i].getSuit() == Cards.Suit.HEARTS) {
                 cardsAllowed[i] = true;
                 allowed++;
             }
