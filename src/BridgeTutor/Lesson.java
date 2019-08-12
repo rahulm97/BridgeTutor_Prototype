@@ -10,6 +10,7 @@ package BridgeTutor;
  * @author GAM
  */
 public class Lesson {
+
     private Deck deck;
     private CardHand playerHand;
     private Cards[] correctPlay;
@@ -18,28 +19,29 @@ public class Lesson {
     private int lessonLevel;
     private double successRate;
     private Input input;
-    
-    public Lesson(){
+
+    public Lesson() {
         input = new Input();
         deck = new Deck();
     }
+
     public void nextLesson() {
-        
+
     }
-    public Cards[] bestPlay(int trick){  
-        //bestPlay = new Cards[10];
-    String best = input.getBest(trick);
-    String[] temp = best.split(",");
-        
-    int count = 0;
+
+    public Cards[] bestPlay(int trick) {
+        String best = input.getBest(trick);
+        String[] temp = best.split(",");
+
+        int count = 0;
         for (String x : temp) {
             bestPlay[count] = deck.toCard(x);
             count++;
         }
-    return bestPlay;
+        return bestPlay;
     }
-    
-    public Cards[] getBestPlay(){
+
+    public Cards[] getBestPlay() {
         return bestPlay;
     }
 }

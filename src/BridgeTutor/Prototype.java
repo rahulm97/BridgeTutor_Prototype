@@ -9,23 +9,16 @@ package BridgeTutor;
  *
  * @author amcgus001
  */
-public class test {
+public class Prototype {
+
     public static void main(String[] args) {
         CardHand hands = new CardHand();
-        
-        //Deck deck = new Deck();
-        Rules rules = new Rules();
-        Player  west, north, east, south;
+        Player west, north, east, south;
         west = new Player(hands.getWestHand(), "west");
         north = new Player(hands.getNorthHand(), "north");
         east = new Player(hands.getEastHand(), "east");
         south = new Player(hands.getSouthHand(), "south");
         Board board = new Board(west, north, east, south);
-        Lesson lesson = new Lesson();
-       // Cards[] bestpLAYSADASD = lesson.bestPlay(1);
-       // for (int i = 0; i < 4; i++) {
-       //     System.out.println("best play: " +bestpLAYSADASD[i]);
-       // }
         board.play();
     }
 }
